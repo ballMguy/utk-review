@@ -8,7 +8,45 @@ datasource db {
 }
 
 model User {
-    id       Int @unique @id @default(autoincrement())
-    username String
-    password String
+    id        Int      @id @unique @default(autoincrement())
+    username  String
+    password  String
+    firstName String
+    lastName  String
+    role      String   @default("USER")
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    Review    Review[]
+}
+
+model Teacher {
+    id        Int      @id @unique @default(autoincrement())
+    firstName String
+    lastName  String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    Course    Course[]
+}
+
+model Course {
+    id          Int      @id @unique @default(autoincrement())
+    name        String
+    description String
+    createdAt   DateTime @default(now())
+    updatedAt   DateTime @updatedAt
+    teacherId   Int
+    teacher     Teacher  @relation(fields: [teacherId], references: [id])
+    Review      Review[]
+}
+
+model Review {
+    id        Int      @id @unique @default(autoincrement())
+    rating    Int
+    comment   String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    courseId  Int
+    course    Course   @relation(fields: [courseId], references: [id])
+    userId    Int
+    user      User     @relation(fields: [userId], references: [id])
 }
