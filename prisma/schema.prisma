@@ -11,11 +11,11 @@ model User {
     id        Int      @id @unique @default(autoincrement())
     username  String    
     password  String
-    firstName String
-    lastName  String
+    firstName String   
+    lastName  String   
     role      String   @default("USER")
     createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+    updatedAt DateTime @updatedAt @default(now())
     Review    Review[]
 }
 

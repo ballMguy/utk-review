@@ -46,16 +46,22 @@ const RegisterPage: React.FC = () => (
           <Input size="large" />
         </Form.Item>
 
-        <Form.Item<RegisterFields>
-          label="อีเมล"
-          name="email"
-          rules={[
-            { required: true, message: 'กรุณาใส่อีเมล' },
-            { type: 'email', message: 'รูปแบบอีเมลไม่ถูกต้อง' },
-          ]}
+        <Form.Item
+          label="ชื่อจริง"
+          name="firstName"
+          rules={[{ required: true, message: 'กรุณากรอกชื่อจริง' }]}
         >
           <Input size="large" />
         </Form.Item>
+
+        <Form.Item
+          label="นามสกุล"
+          name="lastName"
+          rules={[{ required: true, message: 'กรุณากรอกนามสกุล' }]}
+        >
+          <Input size="large" />
+        </Form.Item>
+
 
         <Form.Item<RegisterFields>
           label="รหัสผ่าน"
