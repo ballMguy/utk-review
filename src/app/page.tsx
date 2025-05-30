@@ -1,5 +1,5 @@
 'use client';
-
+import Link from 'next/link';
 import React from 'react';
 import type { FormProps } from 'antd';
 import { Button, Checkbox, Form, Input, Typography, Card } from 'antd';
@@ -76,6 +76,12 @@ const LoginPage: React.FC = () => (
             เข้าสู่ระบบ
           </Button>
         </Form.Item>
+         <div className="text-center mt-4">
+          <Text>ยังไม่มีบัญชี?</Text>{' '}
+          <Link href="/register" className="text-blue-600 hover:underline">
+            สมัครสมาชิก
+          </Link>
+        </div>
       </Form>
     </Card>
   </div>
