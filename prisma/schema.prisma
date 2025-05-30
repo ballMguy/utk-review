@@ -9,7 +9,7 @@ datasource db {
 
 model User {
     id        Int      @id @unique @default(autoincrement())
-    username  String    
+    username  String   @unique 
     password  String
     firstName String   
     lastName  String   
@@ -26,6 +26,7 @@ model Teacher {
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
     Course    Course[]
+    
 }
 
 model Course {
@@ -50,3 +51,4 @@ model Review {
     userId    Int
     user      User     @relation(fields: [userId], references: [id])
 }
+
