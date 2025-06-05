@@ -70,7 +70,7 @@ const ProfessorsPage: React.FC = () => {
                 </Button>,
               ]}
             >
-              <p>วิชาที่สอน: <i>กำลังโหลดจากระบบ...</i></p>
+              
             </Card>
           ))}
         </div>
