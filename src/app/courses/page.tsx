@@ -51,7 +51,7 @@ const handleOk = async () => {
 
   return (
     <main className="p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-2xl font-bold mb-4">📚 รายวิชาทั้งหมด</h1>
+      <h1 className="text-2xl font-bold mb-4">รายวิชาทั้งหมด</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {courses.map((course) => (
           <Card
